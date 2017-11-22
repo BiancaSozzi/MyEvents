@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_margin="10dp"
+    android:background="@color/itemBackgroundColor">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_close"/>
+
+    <ImageView
+        android:id="@+id/event_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        tools:src="@drawable/me_inner_logo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/event_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Concert"
+        android:layout_below="@id/event_image"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/textGreyColor"/>
+
+    <TextView
+        android:id="@+id/event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAlignment="center"
+        android:singleLine="true"
+        android:layout_below="@id/event_name"
+        android:layout_centerHorizontal="true"
+        tools:text="U2 Concert in the USA"
+        android:textColor="@color/textGreyColor"/>
+
+
+</RelativeLayout>
