@@ -9,4 +9,6 @@
     <string name="user_name_text">User Name</string>
     <string name="confirm_password_text">Please confirm your password:</string>
     <string name="password_condition_text">Password must contain at least 3 characters and combine letters and numbers</string>
+    <string name="new_events_title">Upcomming Events</string>
+    <string name="my_events_title">My Events</string>
 </resources>
