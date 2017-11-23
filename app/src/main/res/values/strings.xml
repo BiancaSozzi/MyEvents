@@ -11,4 +11,8 @@
     <string name="password_condition_text">Password must contain at least 3 characters and combine letters and numbers</string>
     <string name="new_events_title">Upcomming Events</string>
     <string name="my_events_title">My Events</string>
+    <string name="new_account_snackbar_text">You now have an account</string>
+    <string name="not_matching_passwords_error_Text">Passwords don\'t match</string>
+    <string name="password_error">Password is not correct</string>
+    <string name="incomplete_fields_toast_text">Incomplete Fields</string>
 </resources>

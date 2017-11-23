@@ -37,11 +37,13 @@ public class NewEventAdapter extends RecyclerView.Adapter<NewEventAdapter.NewEve
     @Override
     public void onBindViewHolder(NewEventViewHolder holder, int position) {
         final String event = eventList.get(position).name.text;
-        final String eventImageURL = eventList.get(position).logo.url;
-
         final NewEventViewHolder viewHolder = holder;
 
-        Picasso.with(context).load(eventImageURL).placeholder(R.drawable.me_inner_logo).into(viewHolder.eventImage);
+        if(eventList.get(position).logo != null){
+            final String eventImageURL = eventList.get(position).logo.url;
+            Picasso.with(context).load(eventImageURL).placeholder(R.drawable.me_inner_logo).into(viewHolder.eventImage);
+        }
+
 
         viewHolder.eventName.setText(event);
     }

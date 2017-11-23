@@ -5,4 +5,5 @@
     <color name="colorAccent">#7648b7</color>
     <color name="textGreyColor">#5e5e61</color>
     <color name="itemBackgroundColor">#FFB2A5C6</color>
+    <color name="error">#FFFF0004</color>
 </resources>
