@@ -54,13 +54,13 @@ public class NewEventsActivity extends AppCompatActivity {
       Gson gson = new GsonBuilder().create();
 
       Retrofit retrofit = new Retrofit.Builder()
-              .baseUrl(EventsService.ENDPOINT)
+              .baseUrl(NewEventsService.ENDPOINT)
               .addConverterFactory(GsonConverterFactory.create(gson))
               .build();
 
-      EventsService eventsService = retrofit.create(EventsService.class);
+      NewEventsService newEventsService = retrofit.create(NewEventsService.class);
 
-      Call<EventResponse> call = eventsService.listEvents(token, searchparam);
+      Call<EventResponse> call = newEventsService.listEvents(token, searchparam);
 
       call.enqueue(new Callback<EventResponse>() {
           @Override

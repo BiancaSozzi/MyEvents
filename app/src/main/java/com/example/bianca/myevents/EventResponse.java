@@ -9,7 +9,6 @@ import java.util.List;
 public class EventResponse {
 
     public List<Event> events;
-    public List<Logo> logo;
 
     public static class Event{
         public Name name;

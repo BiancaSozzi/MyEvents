@@ -8,7 +8,7 @@ import retrofit2.http.Query;
  * Created by bianc on 22/11/2017.
  */
 
-public interface EventsService {
+public interface NewEventsService {
 
     String ENDPOINT = "https://www.eventbriteapi.com/v3/events/";
 
