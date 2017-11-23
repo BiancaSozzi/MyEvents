@@ -12,8 +12,9 @@ public interface EventsService {
 
     String ENDPOINT = "https://www.eventbriteapi.com/v3/events/";
 
+
     @GET("search/")
-    Call<EventResponse> listEvents(@Query("token")String token);
+    Call<EventResponse> listEvents(@Query("token")String token, @Query("q") String searchparam);
 
 
 }

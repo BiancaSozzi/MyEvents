@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -18,6 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NewEventsActivity extends AppCompatActivity {
 
     RecyclerView neweventsRecycleView;
+    SearchView search;
     String searchparam="";
     String token = "XAQOUOUM7OXHPRHWSNFG";
 
@@ -25,6 +27,21 @@ public class NewEventsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_events);
+
+        search = findViewById(R.id.search);
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                searchparam = search.getQuery().toString();
+                getEvent();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
 
         neweventsRecycleView = findViewById(R.id.new_events_list);
         neweventsRecycleView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -43,7 +60,7 @@ public class NewEventsActivity extends AppCompatActivity {
 
       EventsService eventsService = retrofit.create(EventsService.class);
 
-      Call<EventResponse> call = eventsService.listEvents(token);
+      Call<EventResponse> call = eventsService.listEvents(token, searchparam);
 
       call.enqueue(new Callback<EventResponse>() {
           @Override

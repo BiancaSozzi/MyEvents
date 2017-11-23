@@ -21,7 +21,6 @@ import java.util.Random;
 
 public class NewEventAdapter extends RecyclerView.Adapter<NewEventAdapter.NewEventViewHolder> {
     List<EventResponse.Event> eventList;
-    List<String> eventImageURLlist = new ArrayList<>();
     Context context;
 
     public NewEventAdapter(List<EventResponse.Event> eventList, Context context) {
@@ -39,6 +38,7 @@ public class NewEventAdapter extends RecyclerView.Adapter<NewEventAdapter.NewEve
     public void onBindViewHolder(NewEventViewHolder holder, int position) {
         final String event = eventList.get(position).name.text;
         final String eventImageURL = eventList.get(position).logo.url;
+
         final NewEventViewHolder viewHolder = holder;
 
         Picasso.with(context).load(eventImageURL).placeholder(R.drawable.me_inner_logo).into(viewHolder.eventImage);

@@ -13,7 +13,7 @@
         android:layout_height="50dp"
         android:background="@color/colorPrimaryDark"
         android:text="@string/new_events_title"
-        android:layout_toStartOf="@id/search"
+
         android:gravity="center"
         android:fontFamily="serif"
         android:textSize="20sp"
@@ -26,16 +26,16 @@
         android:id="@+id/new_events_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/new_events_title"
+        android:layout_below="@id/search"
         tools:listitem="@layout/new_event_item"/>
 
-    <android.support.v7.widget.SearchView
+    <SearchView
         android:id="@+id/search"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignParentEnd="true"
-        android:background="@color/colorPrimaryDark"
-        android:paddingRight="5dp"/>
+        android:background="@color/colorAccent"
+        android:paddingRight="5dp"
+        android:queryHint="Search Here" />
 
 
 
