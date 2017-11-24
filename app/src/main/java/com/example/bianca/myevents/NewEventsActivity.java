@@ -1,5 +1,6 @@
 package com.example.bianca.myevents;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -75,5 +76,12 @@ public class NewEventsActivity extends AppCompatActivity {
           }
       });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent myevents = new Intent(getApplicationContext(),EventsListActivity.class);
+        startActivity(myevents);
     }
 }

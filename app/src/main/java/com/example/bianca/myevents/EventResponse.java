@@ -13,6 +13,8 @@ public class EventResponse {
     public static class Event{
         public Name name;
         public Logo logo;
+        public Description description;
+        public String url;
     }
 
     public static class Name{
@@ -21,5 +23,9 @@ public class EventResponse {
 
     public static class Logo{
         public String url;
+    }
+
+    public static class Description{
+        public String text;
     }
 }

@@ -24,6 +24,7 @@ public class SignInActivity extends AppCompatActivity {
     TextInputLayout email, password;
     Realm realm;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,16 +55,20 @@ public class SignInActivity extends AppCompatActivity {
                         SharedPreferences preferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
                         editor.putBoolean("isUserLoggedIn", true);
+                        for(int i=0; i<user.size(); i++){
+                            Log.i("email", user.get(i).getEmail());
+                            Log.i("pass",user.get(i).getPassword());
+                            Log.i("id",user.get(i).getId());
+                            editor.putString("userId", user.get(i).getId());
+
+                            if(user.get(i) != null){
+                                Intent eventsListActivity = new Intent(getApplicationContext(), EventsListActivity.class);
+                                startActivity(eventsListActivity);
+                            }
+                        }
                         editor.apply();
                     }
-                    for(int i=0; i<user.size(); i++){
-                        Log.i("email", user.get(i).getEmail());
-                        Log.i("pass",user.get(i).getPassword());
-                        if(user.get(i) != null){
-                            Intent eventsListActivity = new Intent(getApplicationContext(), EventsListActivity.class);
-                            startActivity(eventsListActivity);
-                        }
-                    }
+
                 }else{
                     Toast.makeText(getApplicationContext(), "Email and password must be completed", Toast.LENGTH_LONG).show();
                 }

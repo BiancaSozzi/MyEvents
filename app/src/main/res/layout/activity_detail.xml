@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_marginBottom="30dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.bianca.myevents.DetailActivity"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/event_logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/me_inner_logo" />
+
+    <TextView
+        android:id="@+id/event_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        tools:text="Concert"
+        android:textSize="18sp"
+        android:layout_margin="20dp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/event_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="jfjkdalfjsklafjjsklafska"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="13sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
+
+    <TextView
+        android:id="@+id/event_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:textAlignment="center"
+        tools:text="www.google.com"
+        android:textAllCaps="true"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"/>
+    <ImageView
+        android:id="@+id/save_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_save"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_text"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="12sp"/>
+
+
+</LinearLayout>
+</ScrollView>

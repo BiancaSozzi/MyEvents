@@ -1,54 +1,49 @@
 package com.example.bianca.myevents;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.UUID;
+
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by bianc on 19/11/2017.
  */
 
-public class Event {
+public class Event extends RealmObject {
 
-    private int image;
+    @PrimaryKey
+    private String id = UUID.randomUUID().toString();
+    private String image;
     private String name;
     private String description;
+    private String url;
+    private String userId;
 
-    public Event(int image, String name, String description) {
+    public Event(){
+
+    }
+
+    public Event(String image, String name, String description, String url, String userId) {
         this.image = image;
         this.name = name;
         this.description = description;
+        this.url = url;
+        this.userId = userId;
     }
 
-    public static List<Event> getFakeEvents(){
-        List<Event> fakeEvents = new ArrayList<>();
-
-        Event event1 = new Event(R.mipmap.ic_launcher, "Arjona en Concierto", "Arjona en Arena Maipú mendoza...fafdas");
-        Event event2 = new Event(R.drawable.me_inner_logo, "Las Pastillas del Abuelo", "Una vez más vuelve a mendoza el grupo que jasdjsakldsa");
-
-        fakeEvents.add(event1);
-        fakeEvents.add(event2);
-        fakeEvents.add(event1);
-        fakeEvents.add(event2);
-        fakeEvents.add(event1);
-        fakeEvents.add(event2);
-        fakeEvents.add(event1);
-        fakeEvents.add(event2);
-        fakeEvents.add(event1);
-        fakeEvents.add(event2);
-        fakeEvents.add(event1);
-        fakeEvents.add(event2);
-        fakeEvents.add(event1);
-        fakeEvents.add(event2);
-
-        return fakeEvents;
+    public String getId() {
+        return id;
     }
 
-    public int getImage() {
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -66,5 +61,21 @@ public class Event {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

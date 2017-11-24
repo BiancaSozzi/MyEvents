@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         if(isUserLoggedIn){
             Intent eventslistactivity = new Intent(getApplicationContext(), EventsListActivity.class);
             startActivity(eventslistactivity);
+            finish();
         }
 
         signInButton = findViewById(R.id.sign_in_button);

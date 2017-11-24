@@ -10,14 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="@string/my_events_title"
-        android:textAlignment="center"
-        android:gravity="center"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
         android:background="@color/colorPrimaryDark"
         android:textAllCaps="false"
         android:textStyle="bold"
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp"
-        android:fontFamily="serif"/>
+        android:fontFamily="serif"
+        android:layout_toStartOf="@+id/sign_out" />
+
+    <ImageView
+        android:id="@+id/sign_out"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_exit_to_app"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimaryDark"
+        android:paddingRight="15dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/events_list"

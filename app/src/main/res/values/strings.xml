@@ -15,4 +15,6 @@
     <string name="not_matching_passwords_error_Text">Passwords don\'t match</string>
     <string name="password_error">Password is not correct</string>
     <string name="incomplete_fields_toast_text">Incomplete Fields</string>
+    <string name="link_to_event_text">Get your tickets now! Click here</string>
+    <string name="save_text">Save</string>
 </resources>
