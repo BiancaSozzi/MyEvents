@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -23,11 +25,15 @@ public class NewEventsActivity extends AppCompatActivity {
     SearchView search;
     String searchparam="";
     String token = "XAQOUOUM7OXHPRHWSNFG";
+    ProgressBar loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_events);
+
+        loading = findViewById(R.id.loading);
+
 
         search = findViewById(R.id.search);
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -35,6 +41,8 @@ public class NewEventsActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String s) {
                 searchparam = search.getQuery().toString();
                 getEvent();
+                neweventsRecycleView.setVisibility(View.GONE);
+                loading.setVisibility(View.VISIBLE);
                 return true;
             }
 
@@ -47,6 +55,8 @@ public class NewEventsActivity extends AppCompatActivity {
         neweventsRecycleView = findViewById(R.id.new_events_list);
         neweventsRecycleView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
+        neweventsRecycleView.setVisibility(View.GONE);
+        loading.setVisibility(View.VISIBLE);
         getEvent();
 
     }
@@ -68,10 +78,17 @@ public class NewEventsActivity extends AppCompatActivity {
           public void onResponse(Call<EventResponse> call, Response<EventResponse> response) {
               NewEventAdapter adapter = new NewEventAdapter(response.body().events, NewEventsActivity.this);
               neweventsRecycleView.setAdapter(adapter);
+
+              neweventsRecycleView.setVisibility(View.VISIBLE);
+              loading.setVisibility(View.GONE);
           }
 
           @Override
           public void onFailure(Call<EventResponse> call, Throwable t) {
+
+              neweventsRecycleView.setVisibility(View.VISIBLE);
+              loading.setVisibility(View.GONE);
+
               Toast.makeText(NewEventsActivity.this, t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
           }
       });
