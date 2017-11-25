@@ -5,9 +5,11 @@
     android:layout_width="150dp"
     android:layout_height="150dp"
     android:layout_margin="10dp"
-    android:background="@color/itemBackgroundColor">
+    android:background="@color/itemBackgroundColor"
+    android:id="@+id/my_event_container">
 
     <ImageView
+        android:id="@+id/delete_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

@@ -60,6 +60,7 @@ public class NewEventAdapter extends RecyclerView.Adapter<NewEventAdapter.NewEve
                 }
                 detailActivity.putExtra(DetailActivity.EVENT_DESCRIPTION,description);
                 detailActivity.putExtra(DetailActivity.EVENT_URL,url);
+                DetailActivity.alreadySavedEvent =false;
 
                 context.startActivity(detailActivity);
 

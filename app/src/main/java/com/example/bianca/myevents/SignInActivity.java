@@ -49,8 +49,8 @@ public class SignInActivity extends AppCompatActivity {
                             .where().equalTo("email", emailText)
                             .and().equalTo("password", passwordText).findAll();
                     if(user.isEmpty()){
-                        email.getEditText().setError("Might be wrong");
-                        password.getEditText().setError("Might be wrong");
+                        email.getEditText().setError(getString(R.string.wrong_text));
+                        password.getEditText().setError(getString(R.string.wrong_text));
                     }else{
                         SharedPreferences preferences = getSharedPreferences("sharedPreferences", MODE_PRIVATE);
                         SharedPreferences.Editor editor = preferences.edit();
@@ -70,7 +70,7 @@ public class SignInActivity extends AppCompatActivity {
                     }
 
                 }else{
-                    Toast.makeText(getApplicationContext(), "Email and password must be completed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), R.string.incomplete_fields_message, Toast.LENGTH_LONG).show();
                 }
 
             }

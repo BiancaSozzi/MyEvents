@@ -22,9 +22,10 @@ public class DetailActivity extends AppCompatActivity {
     public static final String EVENT_NAME = "Name";
     public static final String EVENT_DESCRIPTION = "Description";
     public static final String EVENT_URL = "Url";
+    public static boolean alreadySavedEvent = false;
 
     ImageView logo, saveIcon;
-    TextView name, description, url;
+    TextView name, description, url, savetext;
     Realm realm;
 
 
@@ -39,6 +40,12 @@ public class DetailActivity extends AppCompatActivity {
         description = findViewById(R.id.event_description);
         url = findViewById(R.id.event_url);
         saveIcon = findViewById(R.id.save_icon);
+        savetext = findViewById(R.id.save_text);
+
+        if(alreadySavedEvent){
+            saveIcon.setVisibility(View.GONE);
+            savetext.setVisibility(View.GONE);
+        }
 
         realm = Realm.getDefaultInstance();
 
@@ -60,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
                 String eventdescription = description.getText().toString();
                 String eventurl = i.getExtras().getString(EVENT_URL);
                 saveEvent(image, eventname,eventdescription,eventurl);
-                Toast.makeText(getApplicationContext(),"Event saved",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.event_saved_toast_text,Toast.LENGTH_LONG).show();
             }
         });
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyEvents</string>
+    <string name="app_title_text">My Events</string>
+    <string name="sign_in_button_text">Sign In</string>
+    <string name="sign_up_button_text">Sign Up</string>
+    <string name="log_in_title_text">Iniciar Sesión</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Contraseña</string>
+    <string name="user_name_text">Nombre de Usuario</string>
+    <string name="confirm_password_text">Por favor confirma tu contraseña</string>
+    <string name="password_condition_text">La contraseña debe tener al menos tres caracteres y combinar letras y números</string>
+    <string name="new_events_title">Próximos Eventos</string>
+    <string name="my_events_title">Mis Eventos</string>
+    <string name="new_account_snackbar_text">Tu cuenta ha sido creada</string>
+    <string name="not_matching_passwords_error_Text">Las contraseñas no coinciden</string>
+    <string name="password_error">Contraseña incorrecta</string>
+    <string name="incomplete_fields_toast_text">Información incompleta</string>
+    <string name="link_to_event_text">¡Consigue tus entradas ahora! Clikc acá</string>
+    <string name="save_text">Guardar</string>
+    <string name="wrong_text">Email o contraseña incorrecta</string>
+    <string name="incomplete_fields_message">Debe completar email y contraseña</string>
+    <string name="event_saved_toast_text">¡Evento guardado!</string>
+    <string name="create_a_new_account_title_text">Crear una nueva cuenta</string>
+</resources>

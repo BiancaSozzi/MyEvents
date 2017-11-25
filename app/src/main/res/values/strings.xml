@@ -17,4 +17,8 @@
     <string name="incomplete_fields_toast_text">Incomplete Fields</string>
     <string name="link_to_event_text">Get your tickets now! Click here</string>
     <string name="save_text">Save</string>
+    <string name="wrong_text">Might be wrong</string>
+    <string name="incomplete_fields_message">Email and password must be completed</string>
+    <string name="event_saved_toast_text">Event saved</string>
+    <string name="create_a_new_account_title_text">Create a new account</string>
 </resources>
