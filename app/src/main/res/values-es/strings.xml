@@ -16,7 +16,7 @@
     <string name="not_matching_passwords_error_Text">Las contraseñas no coinciden</string>
     <string name="password_error">Contraseña incorrecta</string>
     <string name="incomplete_fields_toast_text">Información incompleta</string>
-    <string name="link_to_event_text">¡Consigue tus entradas ahora! Clikc acá</string>
+    <string name="link_to_event_text">¡Consigue tus entradas ahora! Click aquí</string>
     <string name="save_text">Guardar</string>
     <string name="wrong_text">Email o contraseña incorrecta</string>
     <string name="incomplete_fields_message">Debe completar email y contraseña</string>
